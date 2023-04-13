@@ -317,12 +317,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1317390593396728838, guid: 87ad350c87403644f8d06e276b05e31f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317390593396728838, guid: 87ad350c87403644f8d06e276b05e31f, type: 3}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1317390593396728839, guid: 87ad350c87403644f8d06e276b05e31f, type: 3}
       propertyPath: speed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317390593396728839, guid: 87ad350c87403644f8d06e276b05e31f, type: 3}
+      propertyPath: isJumping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1317390593396728840, guid: 87ad350c87403644f8d06e276b05e31f, type: 3}
       propertyPath: m_Name
