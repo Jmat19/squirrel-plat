@@ -9,7 +9,15 @@ public class PlayerMovement : MonoBehaviour
 
     public float jump;
 
-    public bool isJumping;
+    private bool isGrounded;
+    public Transform feetPos;
+    public float checkRadius;
+    public LayerMask whatIsGround;
+
+    private float jumpTimeCounter;
+    public float jumpTime;
+
+    private bool isJumping;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -18,17 +26,54 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    void FixedUpdate(){
+        Move = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(speed * Move, rb.velocity.y);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        Move = Input.GetAxis("Horizontal");
+        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
-        rb.velocity = new Vector2(speed * Move, rb.velocity.y);
+        if(Move > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else if(Move < 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+
+        if(isGrounded == true && Input.GetKeyDown(KeyCode.Space))
+        {
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
+            rb.velocity = Vector2.up * jump;
+        }
 
         if(Input.GetButtonDown("Jump") && isJumping == false)
         {
             rb.AddForce(new Vector2(rb.velocity.x, jump));
             Debug.Log("Jump");
+        }
+
+        if(Input.GetKey(KeyCode.Space) && isJumping == true)
+        {
+            if(jumpTimeCounter > 0)
+            {
+                rb.velocity = Vector2.up * jump;
+                jumpTimeCounter -= Time.deltaTime;
+            }
+            else
+            {
+                isJumping = false;
+            }
+        }
+
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            isJumping = false;
         }
     }
 
