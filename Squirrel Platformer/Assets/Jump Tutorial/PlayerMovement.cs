@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpTime;
 
     private bool isJumping;
+    private bool isTouchingWall;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -35,6 +36,9 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+        //Debug.Log(isGrounded);
+
+        isTouchingWall = Physics2D.Raycast(wallCheck.position, transform.right, wallCheckDistance, whatIsGround);
 
         if(Move > 0)
         {

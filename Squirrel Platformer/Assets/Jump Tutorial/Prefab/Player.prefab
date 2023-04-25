@@ -143,15 +143,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317390593396728840}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31e2b5bbb1cc3b0499e8c3ed4609cd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jump: 800
+  jump: 15
   feetPos: {fileID: 1962787480778231499}
-  checkRadius: 0.25
+  checkRadius: 0.45
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317390593396728840}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8148015836abcd44bf6baaf63ca0764, type: 3}
   m_Name: 

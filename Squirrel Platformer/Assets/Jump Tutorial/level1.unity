@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &83788551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 83788552}
+  m_Layer: 0
+  m_Name: WallCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &83788552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83788551}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 938137847}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &289179439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -133,6 +164,10 @@ PrefabInstance:
     - target: {fileID: 4935355659115883030, guid: 536fe51d923db3549b1ae49a18fb0767, type: 3}
       propertyPath: m_Name
       value: ground (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935355659115883030, guid: 536fe51d923db3549b1ae49a18fb0767, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4935355659115883035, guid: 536fe51d923db3549b1ae49a18fb0767, type: 3}
       propertyPath: m_RootOrder
@@ -190,6 +225,10 @@ PrefabInstance:
     - target: {fileID: 4935355659115883030, guid: 536fe51d923db3549b1ae49a18fb0767, type: 3}
       propertyPath: m_Name
       value: ground (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935355659115883030, guid: 536fe51d923db3549b1ae49a18fb0767, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4935355659115883035, guid: 536fe51d923db3549b1ae49a18fb0767, type: 3}
       propertyPath: m_RootOrder
@@ -316,14 +355,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 938137853, guid: 87ad350c87403644f8d06e276b05e31f, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1317390593396728839, guid: 87ad350c87403644f8d06e276b05e31f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1317390593396728840, guid: 87ad350c87403644f8d06e276b05e31f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -603,6 +634,10 @@ PrefabInstance:
     - target: {fileID: 4935355659115883030, guid: 536fe51d923db3549b1ae49a18fb0767, type: 3}
       propertyPath: m_Name
       value: ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935355659115883030, guid: 536fe51d923db3549b1ae49a18fb0767, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4935355659115883035, guid: 536fe51d923db3549b1ae49a18fb0767, type: 3}
       propertyPath: m_RootOrder
