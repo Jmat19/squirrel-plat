@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1317390593396728836}
   - component: {fileID: 1317390593396728837}
   - component: {fileID: 1317390593396728839}
-  - component: {fileID: 1317390593396728838}
+  - component: {fileID: 938137853}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -104,8 +104,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_GravityScale: 4
+  m_Material: {fileID: 6200000, guid: 99356b1db42d46d46b39b36d1773ed92, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -119,7 +119,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1317390593396728840}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 99356b1db42d46d46b39b36d1773ed92, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
@@ -143,35 +143,39 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317390593396728840}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31e2b5bbb1cc3b0499e8c3ed4609cd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jump: 500
-  feetPos: {fileID: 0}
-  checkRadius: 0
+  jump: 800
+  feetPos: {fileID: 1962787480778231499}
+  checkRadius: 0.25
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
-  isJumping: 0
---- !u!58 &1317390593396728838
-CircleCollider2D:
+    m_Bits: 256
+  jumpTime: 0.35
+--- !u!114 &938137853
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317390593396728840}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.39}
-  serializedVersion: 2
-  m_Radius: 0.15
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8148015836abcd44bf6baaf63ca0764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  jump: 800
+  feetPos: {fileID: 1962787480778231499}
+  checkRadius: 0.7
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  jumpTime: 0.35
 --- !u!1 &6840916116048081560
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +188,7 @@ GameObject:
   m_Layer: 0
   m_Name: FeetPos
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -196,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6840916116048081560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

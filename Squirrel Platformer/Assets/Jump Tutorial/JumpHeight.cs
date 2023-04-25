@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class JumpHeight : MonoBehaviour
 {
     public float speed;
     private float Move;
@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping;
 
     private Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,27 +37,12 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
-        if(Move > 0)
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0);
-        }
-        else if(Move < 0)
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0);
-        }
-
         if(isGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
             isJumping = true;
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jump;
             Debug.Log(KeyCode.Space);
-        }
-
-        if(Input.GetButtonDown("Jump") && isJumping == false)
-        {
-            rb.AddForce(new Vector2(rb.velocity.x, jump));
-            Debug.Log("Jump");
         }
 
         if(Input.GetKey(KeyCode.Space) && isJumping == true)
@@ -76,24 +62,5 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = false;
         }
-
-        //jumpTimeCounter -= Time.deltaTime;
     }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if(other.gameObject.CompareTag("Ground"))
-        {
-            isJumping = false;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if(other.gameObject.CompareTag("Ground"))
-        {
-            isJumping = true;
-        }
-    }
-
 }
