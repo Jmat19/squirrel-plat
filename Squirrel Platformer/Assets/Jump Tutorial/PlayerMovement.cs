@@ -7,9 +7,17 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     private float Move;
     private float horizontal;
+    private bool isFacingRight = true;
 
     private bool isWallSliding;
     private float wallSlideSpeed;
+
+    private bool isWallJumping;
+    private float wallJumpDirection;
+    private float wallJumpTime = 0.2f;
+    private float wallJumpingCounter;
+    private float wallJumpDuration = 0.4f;
+    private Vector2 wallJumpingPower = new Vector2(8f, 16f);
 
     public float jump;
     //private int nroPulos = 2;
@@ -100,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         WallSlide();
+        WallJump();
 
         /*if (isWallSliding)
         {
@@ -164,6 +173,43 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = true;
         }
+    }
+
+    private void WallJump()
+    {
+        if (isWallSliding)
+        {
+            isWallJumping = false;
+            wallJumpDirection = -transform.localScale.x;
+            wallJumpingCounter = wallJumpTime;
+
+            CancelInvoke(nameof(StopWallJumping));
+        }
+        else
+        {
+            wallJumpingCounter -= Time.deltaTime;
+        }
+
+        if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0f)
+        {
+            isWallJumping = true;
+            rb.velocity = new Vector2(wallJumpDirection * wallJumpingPower.x, wallJumpingPower.y);
+            wallJumpingCounter = 0f;
+
+            if (transform.localScale.x != wallJumpDirection)
+            {
+                isFacingRight = !isFacingRight;
+                Vector3 localScale = transform.localScale;
+                transform.localScale = localScale;
+            }
+
+            Invoke(nameof(StopWallJumping), wallJumpDuration);
+        }
+    }
+
+    private void StopWallJumping()
+    {
+        isWallJumping = false;
     }
 
    /* private void OnDrawGizmos()
