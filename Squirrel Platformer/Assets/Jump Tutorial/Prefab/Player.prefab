@@ -160,7 +160,7 @@ MonoBehaviour:
   wallCheck: {fileID: 0}
   wallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   jumpTime: 0.35
 --- !u!114 &938137853
 MonoBehaviour:
