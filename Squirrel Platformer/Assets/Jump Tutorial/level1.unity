@@ -427,6 +427,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 83788552}
     - target: {fileID: 1317390593396728839, guid: 87ad350c87403644f8d06e276b05e31f, type: 3}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 4935355659115883035, guid: 536fe51d923db3549b1ae49a18fb0767, type: 3}
+    - target: {fileID: 1317390593396728839, guid: 87ad350c87403644f8d06e276b05e31f, type: 3}
       propertyPath: wallLayer.m_Bits
       value: 512
       objectReference: {fileID: 0}
