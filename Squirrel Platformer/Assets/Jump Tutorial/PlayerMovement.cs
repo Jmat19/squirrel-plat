@@ -236,4 +236,13 @@ public class PlayerMovement : MonoBehaviour
             isWallSliding = false;
         }
     }*/
+
+    /*void Flip()
+     {
+         isFacingRight = !isFacingRight;
+         Vector3 Scaler = transform.localScale;
+         Scaler.x *= -1;
+         transform.localScale = Scaler;
+ 
+     }*/
 }
