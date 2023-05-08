@@ -134,6 +134,18 @@ public class PlayerMovement : MonoBehaviour
 
             rb.AddForce(force, ForceMode)
         }*/
+
+        //Flip character sprite
+        Vector3 characterScale = transform.localScale;
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            characterScale.x = -3.5f;
+        }
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            characterScale.x = 3.5f;
+        }
+        transform.localScale = characterScale;
     }
 
     private bool CurGrounded()
