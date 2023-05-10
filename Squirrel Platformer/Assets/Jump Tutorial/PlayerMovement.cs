@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
+    public Animator animator;
     private float Move;
     private float horizontal;
     private bool isFacingRight = true;
@@ -87,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(new Vector2(rb.velocity.x, jump));
             Debug.Log("Jump");
+            //animator SetBool("isJumping", true);
         }
 
         if(Input.GetKey(KeyCode.Space) && isJumping == true)
@@ -135,6 +137,11 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(force, ForceMode)
         }*/
     }
+
+    /*public void onLanding ()
+    {
+        animator SetBool("isJumping", false);
+    }*/
 
     private bool CurGrounded()
     {
